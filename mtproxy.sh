@@ -398,11 +398,11 @@ Uninstall_mtproxy(){
 	fi
 }
 getip(){
-	ip=$(wget -qO- -t1 -T2 ipinfo.io/ip)
+	ip=$(wget -qO- -t1 -T2 api.ip.sb/ip)
 	if [[ -z "${ip}" ]]; then
 		ip=$(wget -qO- -t1 -T2 api.ip.sb/ip)
 		if [[ -z "${ip}" ]]; then
-			ip=$(wget -qO- -t1 -T2 members.3322.org/dyndns/getip)
+			ip=$(wget -qO- -t1 -T2 api.ip.sb/ip)
 			if [[ -z "${ip}" ]]; then
 				ip="VPS_IP"
 			fi
