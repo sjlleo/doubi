@@ -49,7 +49,7 @@ check_sys(){
 	#bit=`uname -m`
 }
 check_installed_status(){
-	[[ ! -e ${mtproxy_file} ]] && echo -e "${Error} MTProxy 没有安装，请检查 !" && exit 1
+	[[ ! -e ${mtproxy_file} ]] && echo -e "${Error} MTProxy 没有安装，请检查 !" 
 }
 check_crontab_installed_status(){
 	if [[ ! -e ${Crontab_file} ]]; then
@@ -308,11 +308,7 @@ Install_mtproxy(){
 	Set_tag
 	Set_nat
 	echo -e "${Info} 开始安装/配置 依赖..."
-	Installation_dependency
 	echo -e "${Info} 开始下载/安装..."
-	Download_mtproxy
-	Download_secret
-	Download_multi
 	echo -e "${Info} 开始下载/安装 服务脚本(init)..."
 	Service_mtproxy
 	echo -e "${Info} 开始写入 配置文件..."
