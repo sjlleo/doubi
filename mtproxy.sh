@@ -301,7 +301,6 @@ Set_mtproxy(){
 }
 Install_mtproxy(){
 	check_root
-	[[ -e ${mtproxy_file} ]] && echo -e "${Error} 检测到 MTProxy 已安装 !" && exit 1
 	echo -e "${Info} 开始设置 用户配置..."
 	Set_port
 	Set_passwd
